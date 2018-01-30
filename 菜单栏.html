@@ -1,0 +1,251 @@
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" type="text/css" href="菜单栏.css">
+		<style type="text/css">
+			.hidden{
+				display: none;
+			}
+			.happen{
+				display: block;
+			}
+		</style>
+	</head>	
+	<body>
+		<div class="wrapper">
+			<div class="fir-wrapper">
+				<ul class="first">
+					<li class="fir-li">1</li>
+					<li class="fir-li">1</li>
+					<li class="fir-li">1</li>
+					<li class="fir-li">1</li>
+				</ul>
+			</div>
+			
+			<div class="sec-wrapper">
+				<ul class="second hidden">
+					<li class="sec-li">2</li>
+					<li class="sec-li">2</li>
+					<li class="sec-li">2</li>
+					<li class="sec-li">2</li>
+				</ul>
+				<ul class="second hidden">
+					<li class="sec-li">2</li>
+					<li class="sec-li">2</li>
+					<li class="sec-li">2</li>
+					<li class="sec-li">2</li>
+				</ul>
+				<ul class="second hidden">
+					<li class="sec-li">2</li>
+					<li class="sec-li">2</li>
+					<li class="sec-li">2</li>
+					<li class="sec-li">2</li>
+				</ul>
+				<ul class="second hidden">
+					<li class="sec-li">2</li>
+					<li class="sec-li">2</li>
+					<li class="sec-li">2</li>
+					<li class="sec-li">2</li>
+				</ul>
+			</div>
+
+			<div class="tir-wrapper">
+				<ul class="third hidden">
+					<li class="tir-li">3</li>
+					<li class="tir-li">3</li>
+					<li class="tir-li">3</li>
+					<li class="tir-li">3</li>
+				</ul>
+				<ul class="third hidden">
+					<li class="tir-li">3</li>
+					<li class="tir-li">3</li>
+					<li class="tir-li">3</li>
+					<li class="tir-li">3</li>
+				</ul>
+				<ul class="third hidden">
+					<li class="tir-li">3</li>
+					<li class="tir-li">3</li>
+					<li class="tir-li">3</li>
+					<li class="tir-li">3</li>
+				</ul>
+				<ul class="third hidden">
+					<li class="tir-li">3</li>
+					<li class="tir-li">3</li>
+					<li class="tir-li">3</li>
+					<li class="tir-li">3</li>
+				</ul>
+				<ul class="third hidden">
+					<li class="tir-li">3</li>
+					<li class="tir-li">3</li>
+					<li class="tir-li">3</li>
+					<li class="tir-li">3</li>
+				</ul>
+				<ul class="third hidden">
+					<li class="tir-li">3</li>
+					<li class="tir-li">3</li>
+					<li class="tir-li">3</li>
+					<li class="tir-li">3</li>
+				</ul>
+				<ul class="third hidden">
+					<li class="tir-li">3</li>
+					<li class="tir-li">3</li>
+					<li class="tir-li">3</li>
+					<li class="tir-li">3</li>
+				</ul>
+				<ul class="third hidden">
+					<li class="tir-li">3</li>
+					<li class="tir-li">3</li>
+					<li class="tir-li">3</li>
+					<li class="tir-li">3</li>
+				</ul>
+				<ul class="third hidden">
+					<li class="tir-li">3</li>
+					<li class="tir-li">3</li>
+					<li class="tir-li">3</li>
+					<li class="tir-li">3</li>
+				</ul>
+				<ul class="third hidden">
+					<li class="tir-li">3</li>
+					<li class="tir-li">3</li>
+					<li class="tir-li">3</li>
+					<li class="tir-li">3</li>
+				</ul>
+				<ul class="third hidden">
+					<li class="tir-li">3</li>
+					<li class="tir-li">3</li>
+					<li class="tir-li">3</li>
+					<li class="tir-li">3</li>
+				</ul>
+				<ul class="third hidden">
+					<li class="tir-li">3</li>
+					<li class="tir-li">3</li>
+					<li class="tir-li">3</li>
+					<li class="tir-li">3</li>
+				</ul>
+				<ul class="third hidden">
+					<li class="tir-li">3</li>
+					<li class="tir-li">3</li>
+					<li class="tir-li">3</li>
+					<li class="tir-li">3</li>
+				</ul>
+				<ul class="third hidden">
+					<li class="tir-li">3</li>
+					<li class="tir-li">3</li>
+					<li class="tir-li">3</li>
+					<li class="tir-li">3</li>
+				</ul>
+				<ul class="third hidden">
+					<li class="tir-li">3</li>
+					<li class="tir-li">3</li>
+					<li class="tir-li">3</li>
+					<li class="tir-li">3</li>
+				</ul>
+				<ul class="third hidden">
+					<li class="tir-li">3</li>
+					<li class="tir-li">3</li>
+					<li class="tir-li">3</li>
+					<li class="tir-li">3</li>
+				</ul>
+			</div>
+			
+		</div>
+		<script type="text/javascript">
+			var first = document.getElementsByTagName("ul")[0],
+				second = document.getElementsByTagName("ul")[1],
+				third = document.getElementsByTagName("ul")[2],
+				div = document.getElementsByTagName("div")[0],
+				firLi = document.getElementsByClassName('fir-li'),
+				firLen = firLi.length,
+				secLi = document.getElementsByClassName('sec-li'),
+				secLen = secLi.length,
+				secULBox = document.getElementsByClassName("second"),
+				secBoxLen = secULBox.length,
+				tirULBox = document.getElementsByClassName("third"),
+				tirBoxLen = tirULBox.length,
+				secDivBox = document.getElementsByClassName("sec-wrapper"),
+				tirULBox = document.getElementsByClassName("third"),
+				tirDivBox = document.getElementsByClassName("tir-wrapper"),
+				i,
+				li = document.getElementsByTagName('li');
+
+			//放置secul
+			for(i = 0; i < secBoxLen; i ++)	{
+				secULBox[i].style.top = (i * 50) + "px";
+			}
+			//放置tirul
+			for(i = 0; i < tirBoxLen; i ++)	{
+				tirULBox[i].style.top = (i * 20) + "px";
+			}
+
+
+
+			var hidden = function () {
+				for(var i = 0; i < firLen; i ++) {
+					secULBox[i].className = "second hidden";
+				}
+				for(var i = 0; i < secLen; i ++) {
+					tirULBox[i].className = "third hidden";
+				}
+				document.removeEventListener("click", hidden)		
+			}
+			var clearUl = function () {
+				document.addEventListener("click", hidden)
+				first.removeEventListener("mouseout", clearUl)	
+
+			}
+			
+			first.addEventListener("click", function (e) {
+				var event = e || window.event,
+					target = event.target || event.srcElement;
+				for(var i = 0; i < firLen; i ++) {
+					if(target == firLi[i]) {
+						secULBox[i].className = "second happen";
+
+						//sec-tir
+						secULBox[i].addEventListener("mouseover", function() {
+							for(i = 0;i < tirBoxLen; i ++) {
+								tirULBox[i].className = "third hidden";
+							}
+						}) 
+
+						//
+						secULBox[i].addEventListener("mouseover", function (e) {
+							var event = e || window.event,
+								target = event.target || event.srcElement;
+							for(var i = 0; i < secLen; i ++) {
+								if(target == secLi[i]) {
+									tirULBox[i].className = "third happen";
+								}
+							}
+						
+							
+							this.addEventListener("mouseout", function (e) {
+								var event = e || window.event,
+									target = event.target || event.srcElement;
+								for(var i = 0; i < secLen; i ++) {
+									if(target == secLi[i]) {
+										tirULBox[i].addEventListener("mouseover", function () {
+											this.className = "third happen";
+										})
+										tirULBox[i].addEventListener("mouseout", function () {
+											this.className = "third hidden";
+										})
+									}
+								}	
+							})
+						})
+						//
+					}
+				}
+				first.addEventListener("mouseout", clearUl)	
+			})
+
+
+
+			
+			
+
+
+		</script>
+	</body>
+</html>

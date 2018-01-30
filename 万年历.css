@@ -1,0 +1,79 @@
+*{
+	list-style: none;
+	text-decoration: none;
+	margin: 0;
+	padding: 0;
+	color: black;
+}
+
+
+.wrapper{
+	border: solid 2px grey;
+	width: 1056px;
+}
+
+.wrapper .content{
+	/*height: 304px;*/
+	width: 426px;
+	border: solid 2px grey;
+	float: left;
+	border-bottom-width: 0px; 
+	border-top-width: 0px; 
+}
+.wrapper .con-right{
+	margin-left: 200px;
+	border-right-width: 0px; 
+}
+
+.wrapper .con-left{
+	border-left-width: 0px; 
+}
+
+.title a{
+	font-weight: 800;
+}
+.title span{
+	color: #fff;
+}
+
+.NM{
+	margin-left: 150px;
+}
+.title .right-data{
+	margin-left: 150px;
+}
+
+.LM{
+	margin-left: 20px;
+}
+.title .left-data{
+	margin-left: 120px;
+}
+.title{
+	line-height: 55px;
+	background: rgba(3,239,228,1);
+	width: 427px;
+	height: 55px;
+}
+.wrapper .week{
+	float: left;
+}
+
+.wrapper .week li{
+	width: 60px;
+	height: 40px;
+	border: solid 1px grey;
+	border-right-width: 0px;
+	border-bottom-width: 0px;
+	font-weight: 600;
+	line-height: 50px;
+	text-align: center;
+}
+
+.clear{
+	clear: both;
+}
+
+.wrapper .content .Monday li{
+	border-left-width: 0px;
+}

@@ -1,0 +1,617 @@
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" type="text/css" href="万年历.css">
+	</head>
+	<body>
+		<div class="wrapper">
+			<div class="content con-left">
+				<div class="left-title title">
+					<a href="#" class="LM"><span class="last-month" style="color:black;">8</span><span style="color:black;">月</span></a>
+					<span class="left-data">
+						<span class="year">2016</span><span>年</span><span class="this-month left-month">9</span><span>月</span>
+					</span>
+					
+				</div>
+				<ul class="Monday week">
+					<li class="weekday">周一</li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+				</ul>
+				<ul class="Tuesday week">
+					<li class="weekday">周二</li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+				</ul>
+				<ul class="Wednesday week">
+					<li class="weekday">周三</li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+				</ul>
+				<ul class="Thursday week">
+					<li class="weekday">周四</li>
+					<li>1</li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+				</ul>
+				<ul class="Firday week">
+					<li class="weekday">周五</li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+				</ul>
+				<ul class="Saturday week">
+					<li class="weekend">周六</li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+				</ul>
+				<ul class="Sunday week">
+					<li class="weekend">周日</li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+				</ul>
+
+				<div class="clear"></div>
+			</div>
+			<div class="content con-right">
+				<div class="right-title title">
+					<span class="right-data">
+						<span class="year">2016</span><span>年</span><span class="this-month right-month">10</span><span>月</span>
+					</span>
+					<a href="#" class="NM"><span class="next-month" style="color:black;">11</span><span style="color:black;">月</span></a>
+				</div>
+				<ul class="Monday week">
+					<li class="weekday">周一</li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+				</ul>
+				<ul class="Tuesday week">
+					<li class="weekday">周二</li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+				</ul>
+				<ul class="Wednesday week">
+					<li class="weekday">周三</li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+				</ul>
+				<ul class="Thursday week">
+					<li class="weekday">周四</li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+				</ul>
+				<ul class="Firday week">
+					<li class="weekday">周五</li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+				</ul>
+				<ul class="Saturday week">
+					<li class="weekend">周六</li>
+					<li>1</li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+				</ul>
+				<ul class="Sunday week">
+					<li class="weekend">周日</li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+				</ul>
+				
+				<div class="clear"></div>
+			</div>	
+			<div class="clear"></div>
+		</div>
+		
+		<script type="text/javascript">
+			// 1.开始左侧为当前年月日
+			// 2.右侧为下一月
+
+			// 当前年月日为红色
+			// 当前年月已经过的日为灰色
+			// 当前年月未经过的日为蓝色
+
+			// 点击图片7月左右两侧日历同时切换
+			// 当点击左侧12月或者左侧1月时切换年份
+
+			var thisTime = new Date();
+			
+
+
+
+
+
+			var li = document.getElementsByTagName("li"),
+				len = li.length,
+				year = document.getElementsByClassName("year"),
+				yLen = year.length,
+				month = document.getElementsByClassName("this-month"),
+				mLen = month.length,
+				weekday = document.getElementsByClassName("weekday"),
+				weekend = document.getElementsByClassName("weekend"),
+				wdLen = weekday.length,
+				weLen = weekend.length;
+
+				//左边日历（日期字体颜色）
+				var leftDateColor = function () {
+					if(year[0].innerText == thisTime.getFullYear()) {
+						if(month[0].innerText == (thisTime.getMonth() + 1)) {
+							for(var i = 0;i < 49; i ++) {
+								if(li[i].innerText == thisTime.getDate()) {
+									li[i].style.color = "red";
+								}else if(li[i].innerText < thisTime.getDate()) {
+									li[i].style.color = "grey";
+								}else if(li[i].innerText > thisTime.getDate()){
+									li[i].style.color = "blue"; 
+								}	
+							}
+						}else if(month[0].innerText > (thisTime.getMonth() + 1)) {
+							for(var i = 0; i < 49; i ++) {
+								li[i].style.color = "blue";	
+							} 
+						}else if(month[0].innerText < (thisTime.getMonth() + 1)) {
+							for(var i = 0; i < 49; i ++) {
+								li[i].style.color = "grey";	
+							}
+						}
+					}else if(year[0].innerText > thisTime.getFullYear()) {
+						for(var i = 0; i < 49; i ++) {
+							li[i].style.color = "blue";	
+						}
+					}else if(year[0].innerText < thisTime.getFullYear()) {
+						for(var i = 0; i < 49; i ++) {
+							li[i].style.color = "grey";	
+						}
+					}			
+				}
+				leftDateColor();
+
+
+
+
+				//右边日历(日期字体颜色)
+				var rightDateColor = function () {
+					if(year[1].innerText == thisTime.getFullYear()) {
+						if(month[1].innerText == (thisTime.getMonth() + 1)) {
+							for(var i = 49;i < len; i ++) {
+								if(li[i].innerText == thisTime.getDate()) {
+									li[i].style.color = "red";
+								}else if(li[i].innerText < thisTime.getDate()) {
+									li[i].style.color = "grey";
+								}else if(li[i].innerText > thisTime.getDate()){
+									li[i].style.color = "blue"; 
+								}	
+							}
+						}else if(month[1].innerText > (thisTime.getMonth() + 1)) {
+							for(var i = 49; i < len; i ++) {
+								li[i].style.color = "blue";	
+							} 
+						}else if(month[1].innerText < (thisTime.getMonth() + 1)) {
+							for(var i = 49; i < len; i ++) {
+								li[i].style.color = "grey";	
+							} 
+						}
+					}else if(year[1].innerText > thisTime.getFullYear()) {
+						for(var i = 49; i < len; i ++) {
+							li[i].style.color = "blue";	
+						}
+					}else if(year[1].innerText < thisTime.getFullYear()) {
+						for(var i = 49; i < len; i ++) {
+							li[i].style.color = "grey";	
+						}
+					}			
+				}
+				rightDateColor();
+
+
+
+			//工作周字体颜色
+			
+			var weekdayColor = function () {
+				for(var i = 0; i < wdLen; i ++) {
+					weekday[i].style.color = "black";
+				}
+			}
+			weekdayColor();
+			//周末字体颜色
+			var weekendColor = function () {
+				for(var i = 0; i < weLen; i ++) {
+					weekend[i].style.color = "#f20";
+				}	
+			}
+			weekendColor();
+
+			var leftMonth = document.getElementsByClassName("this-month")[0],
+				rightMonth = document.getElementsByClassName("this-month")[1];
+
+			//左日历添加日期
+			var addDateLeft = function () {
+				for(i = 0; i < 49; i ++) {
+					if(li[i].innerText == 1) {
+						
+						for(var n = i, a = 1;n < 49, a < 32; n += 7, a ++) {
+							if(n < 49) {
+								li[n].innerText = a;
+							}else{
+								n = n - 48;
+								li[n].innerText = a; 
+							}
+
+						}
+					}
+				}
+			}
+			addDateLeft();
+
+			//删除多余日期str
+			var delDateLeft = function () {
+				switch(leftMonth.innerText) {
+				case "2":
+				if(year[0].innerText % 4 == 0) {
+					for(var i = 0;i < 49; i ++) {
+						switch(li[i].innerText) {
+							case "31": 
+							li[i].innerText = "";
+							break;
+							case "30": 
+							li[i].innerText = "";
+							break;
+						}
+					}
+				}else if(year[0].innerText % 4 != 0){
+					for(var i = 0;i < 49; i ++) {
+						switch(li[i].innerText) {
+							case "31": 
+							li[i].innerText = "";
+							break;
+							case "30": 
+							li[i].innerText = "";
+							break;
+							case "29": 
+							li[i].innerText = "";
+							break;
+						}
+					}
+				}
+				break;
+				case "4": 
+				for(var i = 0; i < 49; i ++) {
+					if(li[i].innerText == 31) {
+						li[i].innerText = "";
+					}
+				}
+				break;
+				case "6": 
+				for(var i = 0; i < 49; i ++) {
+					if(li[i].innerText == 31) {
+						li[i].innerText = "";
+					}
+				}
+				break;
+				case "9": 
+				for(var i = 0; i < 49; i ++) {
+					if(li[i].innerText == 31) {
+						li[i].innerText = "";
+					}
+				}
+				break;
+				case "11": 
+				for(var i = 0; i < 49; i ++) {
+					if(li[i].innerText == 31) {
+						li[i].innerText = "";
+					}
+				}
+				break;
+				}
+			}
+			delDateLeft();
+			//删除多余日期end
+			//右边
+			var delDateRight = function () {
+				switch(rightMonth.innerText) {
+				case "2":
+				if(year[1].innerText % 4 == 0) {
+					for(var i = 49;i < 98; i ++) {
+						switch(li[i].innerText) {
+							case "31": 
+							li[i].innerText = "";
+							break;
+							case "30": 
+							li[i].innerText = "";
+							break;
+						}
+					}
+				}else if(year[1].innerText % 4 != 0){
+					for(var i = 49;i < 98; i ++) {
+						switch(li[i].innerText) {
+							case "31": 
+							li[i].innerText = "";
+							break;
+							case "30": 
+							li[i].innerText = "";
+							break;
+							case "29": 
+							li[i].innerText = "";
+							break;
+						}
+					}
+				}
+				break;
+				case "4": 
+				for(var i = 49; i < 98; i ++) {
+					if(li[i].innerText == 31) {
+						li[i].innerText = "";
+					}
+				}
+				break;
+				case "6": 
+				for(var i = 49; i < 98; i ++) {
+					if(li[i].innerText == 31) {
+						li[i].innerText = "";
+					}
+				}
+				break;
+				case "9": 
+				for(var i = 49; i < 98; i ++) {
+					if(li[i].innerText == 31) {
+						li[i].innerText = "";
+					}
+				}
+				break;
+				case "11": 
+				for(var i = 49; i < 98; i ++) {
+					if(li[i].innerText == 31) {
+						li[i].innerText = "";
+					}
+				}
+				break;
+				}
+			}
+			delDateRight();
+			//右日历添加日期
+			var addDateRight = function () {
+				for(i = 49; i < len; i ++) {
+					if(li[i].innerText == 1) {
+						
+						for(var n = i, a = 1;n < len, a < 32; n += 7, a ++) {
+							if(n < len) {
+								li[n].innerText = a;
+							}else{
+								n = n - 48;
+								li[n].innerText = a; 
+							}
+
+						}
+					}
+				}
+			}
+			addDateRight();
+
+
+
+
+
+
+
+
+
+
+
+
+			//点击，转换年月str(完成)
+			var a = document.getElementsByTagName("a")[0];
+			    lastMonth = document.getElementsByClassName("LM")[0],
+			    nextMonth = document.getElementsByClassName("NM")[0],	
+			 	laMonth = document.getElementsByClassName("last-month")[0],
+				neMonth = document.getElementsByClassName("next-month")[0];
+		    a.addEventListener("click", function (e) {
+				e.preventDefault();
+			})
+			lastMonth.addEventListener("click", function () {
+				if(neMonth.innerText == 1) {
+					neMonth.innerText = 13;
+				}else if(rightMonth.innerText == 1) {
+					rightMonth.innerText = 13;
+					year[1].innerText --;
+				}else if(leftMonth.innerText == 1) {
+					leftMonth.innerText = 13;
+					year[0].innerText --;
+				}else if(laMonth.innerText == 1) {
+					laMonth.innerText = 13;
+				}
+				leftMonth.innerText --;
+				rightMonth.innerText --;
+				neMonth.innerText --;
+				laMonth.innerText --;
+			})
+			nextMonth.addEventListener("click", function () {
+				if(neMonth.innerText == 12) {
+					neMonth.innerText = 0;
+				}else if(rightMonth.innerText == 12) {
+					rightMonth.innerText = 0;
+					year[1].innerText ++;
+				}else if(leftMonth.innerText == 12) {
+					leftMonth.innerText = 0;
+					year[0].innerText ++;
+				}else if(laMonth.innerText == 12) {
+					laMonth.innerText = 0;
+				}
+				leftMonth.innerText ++;
+				rightMonth.innerText ++;
+				neMonth.innerText ++;
+				laMonth.innerText ++;
+			})
+			//转换年月end
+
+
+
+			//添加每月1号（左边）
+			var leftMonth = document.getElementsByClassName("left-month")[0],
+				rightMonth = document.getElementsByClassName("right-month")[0];
+			var setDateLeft = function () {
+				//设置成日历当前年月
+				thisTime.setMonth(leftMonth.innerText - 1);
+				thisTime.setFullYear(year[0].innerText);
+				//找到每月1号
+				thisTime.setDate(01);
+				//还原所有日期
+				for(var i = 0; i < 49; i ++) {
+					if(!isNaN(li[i].innerText)) {
+						li[i].innerText = "";
+					}
+				}
+				//添加每月1号
+				switch(thisTime.getDay()) {
+					case 1:
+						li[1].innerText = 1;
+					break;
+					case 2:
+					li[8].innerText = 1;
+					break;
+					case 3:
+						li[15].innerText = 1;
+					break;	
+					case 4:
+						li[22].innerText = 1;
+					break;	
+					case 5:
+						li[29].innerText = 1;
+					break;	
+					case 6:
+						li[36].innerText = 1;
+					break;	
+					case 0:
+						li[43].innerText = 1;
+					break;			
+				}
+				//重置日期
+				thisTime = new Date();	
+			}
+				
+
+
+
+			//右边设置每月1号
+			var setDateRight = function () {
+				//设置成日历当前年月
+				thisTime.setMonth(rightMonth.innerText - 1);
+				thisTime.setFullYear(year[1].innerText);
+				//找到每月1号
+				thisTime.setDate(01);
+				//还原所有日期
+				for(var i = 49; i < len; i ++) {
+					if(!isNaN(li[i].innerText)) {
+						li[i].innerText = "";
+					}
+				}
+				//添加每月1号
+				switch(thisTime.getDay()) {
+					case 1:
+						li[50].innerText = 1;
+					break;
+					case 2:
+						li[57].innerText = 1;
+					break;
+					case 3:
+						li[64].innerText = 1;
+					break;	
+					case 4:
+						li[71].innerText = 1;
+					break;	
+					case 5:
+						li[78].innerText = 1;
+					break;	
+					case 6:
+						li[85].innerText = 1;
+					break;	
+					case 0:
+						li[92].innerText = 1;
+					break;			
+				}
+				//重置日期
+				thisTime = new Date();	
+			}
+			
+
+
+			leftDateColor();
+			
+
+			//添加事件
+			lastMonth.addEventListener("click", setDateRight)
+			lastMonth.addEventListener("click", setDateLeft)
+			lastMonth.addEventListener("click", addDateRight)	
+			lastMonth.addEventListener("click", addDateLeft)	
+			lastMonth.addEventListener("click", delDateLeft)		
+			lastMonth.addEventListener("click", delDateRight)	
+			lastMonth.addEventListener("click", rightDateColor)
+			lastMonth.addEventListener("click", leftDateColor)
+			lastMonth.addEventListener("click", weekdayColor)
+			lastMonth.addEventListener("click", weekendColor)
+				
+
+			nextMonth.addEventListener("click", setDateRight)
+			nextMonth.addEventListener("click", setDateLeft)
+			nextMonth.addEventListener("click", addDateRight)	
+			nextMonth.addEventListener("click", addDateLeft)	
+			nextMonth.addEventListener("click", delDateLeft)		
+			nextMonth.addEventListener("click", delDateRight)
+			nextMonth.addEventListener("click", rightDateColor)
+			nextMonth.addEventListener("click", leftDateColor)
+			nextMonth.addEventListener("click", weekdayColor)
+			nextMonth.addEventListener("click", weekendColor)			
+		</script>
+	</body>
+</html>
